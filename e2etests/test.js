@@ -9,13 +9,13 @@ describe('TodoList App', () => {
     expect(actualTitle).to.equal('Todo List');
   });
 
-  // it('Should allow me to create a Todo', () => {
-  //   const todoText = "Finish the tech test";
-  //   browser.url('http://localhost:3000/');
-  //   browser.element('.todo-input').setValue(todoText);
-  //   browser.click('.todo-submit');
-  //   const actual = browser.element('.todo-text').getText();
-  //
-  //   expect(actual).to.equal(todoText);
-  // });
+  it('Should allow me to create a Todo', () => {
+    const todoText = "Finish the tech test";
+    browser.url('http://localhost:3000/');
+    browser.element('.todo-input').setValue(todoText);
+    browser.click('.todo-submit');
+    const actual = browser.element('.todo-text').getText();
+
+    expect(actual).to.equal(todoText);
+  });
 });
