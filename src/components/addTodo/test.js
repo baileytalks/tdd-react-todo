@@ -1,5 +1,3 @@
-/* global expect, it, describe, jest, beforeEach */
-
 import React from 'react';
 import Enzyme from 'enzyme';
 import { shallow, mount } from 'enzyme';
@@ -20,11 +18,11 @@ describe('AddTodo component', () => {
     );
   });
 
-  it('Should render successfully', () => {
+  it('should render successfully', () => {
     expect(component.exists()).toEqual(true);
   });
 
-  it('Should have one input', () => {
+  it('should have one input', () => {
     expect(component.find('.todo-input').length).toEqual(1);
   });
 

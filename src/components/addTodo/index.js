@@ -14,13 +14,14 @@ const AddTodo = ({ submitTodo }) => {
         }}
       >
         <input
-          className="todo-input"
+          type='text'
+          className='todo-input'
           ref={(element) => {
             input = element;
           }}
         />
 
-        <button type="submit" className="todo-submit">
+        <button type='submit' className='todo-submit'>
           Add Todo
         </button>
       </form>

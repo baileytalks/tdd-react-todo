@@ -1,5 +1,3 @@
-/* global expect, it, describe */
-
 import types from '../constants/';
 import { reducer, initialState } from '.';
 
@@ -58,7 +56,7 @@ describe('Reducer', () => {
     })
   });
 
-  describe.only('toggle todo', () => {
+  describe('toggle todo', () => {
     it('should toggle the todo to complete', () => {
       const startingState = {
         todos: [

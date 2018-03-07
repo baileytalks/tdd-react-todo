@@ -6,10 +6,11 @@ import TodoList from './components/todoList';
 import actions from './actions/';
 
 export const App = ({ submitTodo, todos, deleteTodo, toggleTodo }) => (
-  <div>
-    <h1>Todo list</h1>
+  <div className="card">
+    <h1>What do you want to do today?</h1>
     <AddTodo submitTodo={submitTodo} />
     <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>
+    <footer>made with ❤️ by <a href="https://github.com/baileytalks/tdd-react-todo">@baileytalks</a></footer>
   </div>
 );
 

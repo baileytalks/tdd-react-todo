@@ -4,19 +4,19 @@ import PropTypes from 'prop-types';
 const TodoList = ({ todos, deleteTodo, toggleTodo }) => {
   const todoItems = todos.map(todo => (
     <li key={todo.id}>
-      <span className="todo-text" style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.text}</span>
-      <button
-        type="button"
-        className="todo-delete"
-        onClick={() => deleteTodo(todo.id)}
-      >delete
-      </button>
       <input
-        type="radio"
+        type='radio'
         onClick={() => toggleTodo(todo.id)}
-        className="todo-toggle"
+        className='todo-toggle'
       >
       </input>
+      <span className='todo-text' style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>{todo.text}</span>
+      <span
+        type='button'
+        className='todo-delete'
+        onClick={() => deleteTodo(todo.id)}
+      >x
+      </span>
     </li>
   ));
 
