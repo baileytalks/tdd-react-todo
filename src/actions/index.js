@@ -21,6 +21,13 @@ const actions = {
       type: types.DELETE_TODO,
       id: id
     }
+  },
+
+  toggleTodo(id) {
+    return {
+      type: types.TOGGLE_TODO,
+      id: id
+    }
   }
 };
 

@@ -15,14 +15,16 @@ describe('Reducer', () => {
       const action = {
         type: types.SUBMIT_TODO,
         id: 1,
-        text: todoText
+        text: todoText,
+        completed: false
       };
 
       const expectedState = {
         todos: [
           {
             id: 1,
-            text: todoText
+            text: todoText,
+            completed: false
           }
         ]
       };
@@ -37,7 +39,8 @@ describe('Reducer', () => {
         todos: [
           {
             id: 1,
-            text: todoText
+            text: todoText,
+            completed: false
           }
         ]
       };
@@ -53,5 +56,36 @@ describe('Reducer', () => {
 
       expect(reducer(startingState, action)).toEqual(expectedState);
     })
+  });
+
+  describe.only('toggle todo', () => {
+    it('should toggle the todo to complete', () => {
+      const startingState = {
+        todos: [
+          {
+            id: 1,
+            text: todoText,
+            completed: false
+          }
+        ]
+      };
+
+      const action = {
+        type: types.TOGGLE_TODO,
+        id: 1
+      };
+
+      const expectedState = {
+        todos: [
+          {
+            id: 1,
+            text: todoText,
+            completed: true
+          }
+        ]
+      };
+
+      expect(reducer(startingState, action)).toEqual(expectedState);
+    });
   })
 });

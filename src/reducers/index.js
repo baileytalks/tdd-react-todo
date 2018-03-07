@@ -14,8 +14,21 @@ export const reducer = (state = initialState, action) => {
           ...state.todos,
           {
             id: action.id,
-            text: action.text
+            text: action.text,
+            completed: false
           },
+        ]
+      };
+
+    case types.TOGGLE_TODO:
+      return {
+        ...state,
+        todos: [
+          ...state.todos.map(todo =>
+            (todo.id === action.id)
+            ? {...todo, completed: !todo.completed}
+            : todo
+          )
         ]
       };
 
@@ -25,8 +38,8 @@ export const reducer = (state = initialState, action) => {
         todos: [
           ...state.todos.filter(todo => (
             todo.id !== action.id
-          )),
-        ],
+          ))
+        ]
       };
 
     default:

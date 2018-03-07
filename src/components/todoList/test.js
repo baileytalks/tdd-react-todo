@@ -10,15 +10,18 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('TodoList component', () => {
   const deleteMock = jest.fn();
+  const toggleMock = jest.fn();
 
   const props = {
     todos: [
       {
         id: 1,
-        text: 'A todo'
+        text: 'A todo',
+        completed: false
       }
     ],
     deleteTodo: deleteMock,
+    toggleTodo: toggleMock
   };
 
   const component = shallow(<TodoList {...props} />);
@@ -34,6 +37,12 @@ describe('TodoList component', () => {
   it('should call the deleteTodo function when Delete button is clicked', () => {
     expect(deleteMock.mock.calls.length).toEqual(0);
     component.find('.todo-delete').simulate('click');
+    expect(deleteMock.mock.calls.length).toEqual(1);
+  });
+
+  it('should call the toggleTodo function when the radio button is clicked', () => {
+    expect(toggleMock.mock.calls.length).toEqual(0);
+    component.find('.todo-toggle').simulate('click');
     expect(deleteMock.mock.calls.length).toEqual(1);
   });
 });

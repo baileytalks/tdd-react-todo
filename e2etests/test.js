@@ -1,5 +1,5 @@
 /* global describe, it, browser */
-const expect = require('chai').expect;
+const { expect } = require('chai').use(require('chai-style'));
 
 describe('TodoList App', () => {
   it('should load with the right title', () => {
@@ -28,5 +28,16 @@ describe('TodoList App', () => {
     const actual = browser.element('.todo-text');
 
     expect(actual.state).to.equal('failure');
+  });
+
+  it('should allow a todo to change from uncomplete to complete', () => {
+    const todoText = "change a todo to complete";
+    browser.url('http://localhost:3000');
+    browser.element('.todo-input').setValue(todoText);
+    browser.click('.todo-submit');
+    browser.click('.todo-toggle');
+    const actual = browser.element('.todo-text').getCssProperty('text-decoration');
+
+    expect(actual.value).to.contain('line-through')
   });
 });
