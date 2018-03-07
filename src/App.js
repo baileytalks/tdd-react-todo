@@ -10,7 +10,7 @@ export const App = ({ submitTodo, todos, deleteTodo, toggleTodo }) => (
     <h1>What do you want to do today?</h1>
     <AddTodo submitTodo={submitTodo} />
     <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo}/>
-    <footer>made with ❤️ by <a href="https://github.com/baileytalks/tdd-react-todo">@baileytalks</a></footer>
+    <footer>made with ❤️ by <a href="https://twitter.com/baileytalks">@baileytalks</a> | code on <a href="https://github.com/baileytalks/tdd-react-todo">github</a></footer>
   </div>
 );
 
